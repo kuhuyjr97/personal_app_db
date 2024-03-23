@@ -1,0 +1,49 @@
+{{!-- {{>head}} --}}
+<body>
+  <div class="container">
+    <p>尊敬的客户{{ applicantName }}</p>
+    <br>
+
+    <p>您好，感谢您申请GTN 电气燃气开通服务。</p>
+    <p>我们已将您的信息提供至电气燃气服务公司，现在需要您确认同意代理申请所需的“使用条款”。</p>
+    <br>
+
+    <p>电力/燃气公司（ヒナタオエナジー）的使用条款已发送至您邮箱，请您打开邮件中附带的链接，点击同意以完成申请。</p>
+    <p>（邮件名称：[HINATAO ENERGY] Please Confirm Terms and Conditions）（参考图片）</p>
+    <p>※若您未在本同意条款页面上确认同意，将无法完成申请，我们也无法在您所期望的日期提供开通服务。</p>
+    <p>请务必在服务开始日期前的5天内确认同意。</p>
+    <p>※若未在时间内确认同意，申请将被自动取消，同时恕我们难以再给您提供此服务开通的申请代理。</p>
+    <p>届时，您需要亲自向各供应公司提交开通申请。</p>
+    <br>
+
+    <p>以下是相关日期信息，如果您有任何疑问，请通过此电子邮件地址与我们联系。</p>
+    <br>
+
+    <p>电力/燃气公司：  ヒナタオエナジー</p>
+    <p>
+      电力开始日期：  
+      {{#if electricStartDate }}
+        {{electricStartDateYear}}年{{electricStartDateMonth}}月{{electricStartDateDay}}日
+      {{else}}
+        -
+      {{/if}}
+    </p>
+    <p>
+      燃气上门开栓日期：  
+      {{#if gasStartDate }}
+        {{gasStartDateYear}}年{{gasStartDateMonth}}月{{gasStartDateDay}}日
+      {{else}}
+        -
+      {{/if}}
+    </p>
+    <p>燃气上门开栓时间：  {{ gasStartTime }}</p>
+    <p>
+      水道开通开始日期：  
+      {{#if withWaterSupply }}
+        与电气使用开始日期相同
+      {{else}}
+        -
+      {{/if}}
+    </p>
+  </div>
+</body>

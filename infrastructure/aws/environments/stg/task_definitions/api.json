@@ -1,0 +1,9 @@
+{
+  "family": "api",
+  "networkMode": "awsvpc",
+  "executionRoleArn": "arn:aws:iam::654654562852:role/EcsTaskExecution",
+  "taskRoleArn": "arn:aws:iam::654654562852:role/EcsTaskRole",
+  "cpu": "1024",
+  "memory": "2048",
+  "containerDefinitions": []
+}

@@ -1,0 +1,120 @@
+[
+  {
+    "name": "nginx",
+    "image": "654654562852.dkr.ecr.ap-northeast-1.amazonaws.com/affiliate-stg-nginx:latest",
+    "essential": true,
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-region": "ap-northeast-1",
+        "awslogs-stream-prefix": "nginx",
+        "awslogs-group": "/ecs/nginx"
+      }
+    },
+    "portMappings": [
+      {
+        "protocol": "tcp",
+        "containerPort": 80
+      }
+    ]
+  },
+  {
+    "name": "migrate",
+    "image": "654654562852.dkr.ecr.ap-northeast-1.amazonaws.com/affiliate-stg-migrate:latest",
+    "essential": false,
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-region": "ap-northeast-1",
+        "awslogs-stream-prefix": "migrate",
+        "awslogs-group": "/ecs/node"
+      }
+    },
+    "secrets": [{ "name": "DATABASE_URL", "valueFrom": "/app/database_url" }]
+  },
+  {
+    "name": "rpa",
+    "image": "654654562852.dkr.ecr.ap-northeast-1.amazonaws.com/affiliate-stg-rpa-api:latest",
+    "essential": true,
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-region": "ap-northeast-1",
+        "awslogs-stream-prefix": "rpa",
+        "awslogs-group": "/ecs/node"
+      }
+    },
+    "portMappings": [
+      {
+        "protocol": "tcp",
+        "containerPort": 3000
+      }
+    ],
+    "environment": [
+      {
+        "name": "NO_COLOR",
+        "value": "true"
+      }
+    ],
+    "secrets": [
+      { "name": "ADMIN_EMAIL", "valueFrom": "/app/admin_email" },
+      { "name": "APP_ENV", "valueFrom": "/app/app_env" },
+      {
+        "name": "APPSMITH_JWT_SECRET",
+        "valueFrom": "/app/appsmith_jwt_secret"
+      },
+      { "name": "AWS_ACCESS_KEY", "valueFrom": "/app/aws_access_key_id" },
+      { "name": "AWS_KEY_SECRET", "valueFrom": "/app/aws_secret_access_key" },
+      { "name": "AWS_REGION", "valueFrom": "/app/aws_region" },
+      { "name": "AWS_S3_BUCKET", "valueFrom": "/app/aws_s3_bucket" },
+      { "name": "DATABASE_URL", "valueFrom": "/app/database_url" },
+      {
+        "name": "EMAIL_FROM_ADDRESS",
+        "valueFrom": "/app/email_from_address"
+      },
+      {
+        "name": "EMAIL_FROM_NAME",
+        "valueFrom": "/app/email_from_name"
+      },
+      {
+        "name": "GOOGLE_CLIENT_ID",
+        "valueFrom": "/app/google_client_id"
+      },
+      {
+        "name": "GOOGLE_CLIENT_SECRET",
+        "valueFrom": "/app/google_client_secret"
+      },
+      {
+        "name": "GOOGLE_REDIRECT_URI",
+        "valueFrom": "/app/google_redirect_uri"
+      },
+      {
+        "name": "MOBILE_S3_ACCESS_KEY",
+        "valueFrom": "/app/aws_access_key_id"
+      },
+      {
+        "name": "MOBILE_S3_BUCKET",
+        "valueFrom": "/app/mobile_s3_bucket"
+      },
+      {
+        "name": "MOBILE_S3_KEY_SECRET",
+        "valueFrom": "/app/aws_secret_access_key"
+      },
+      {
+        "name": "MOBILE_S3_REGION",
+        "valueFrom": "/app/aws_region"
+      },
+      { "name": "SES_AWS_ACCESS_KEY", "valueFrom": "/app/aws_access_key_id" },
+      {
+        "name": "SES_AWS_KEY_SECRET",
+        "valueFrom": "/app/aws_secret_access_key"
+      },
+      { "name": "SES_AWS_REGION", "valueFrom": "/app/ses_region" },
+      { "name": "ITS_EMAIL", "valueFrom": "/app/its_email" },
+      { "name": "SF_CLIENT_ID", "valueFrom": "/app/sf_client_id" },
+      { "name": "SF_CLIENT_SECRET", "valueFrom": "/app/sf_client_secret" },
+      { "name": "SF_PASSWORD", "valueFrom": "/app/sf_password" },
+      { "name": "SF_USERNAME", "valueFrom": "/app/sf_username" }
+    ]
+  }
+]

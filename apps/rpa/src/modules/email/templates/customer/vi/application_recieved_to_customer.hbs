@@ -1,0 +1,52 @@
+{{>head}}
+<body>
+  <div class="container">
+    <p>Kính gửi Quý khách {{ applicantName }}</p>
+    <br>
+
+    <p>Cảm ơn Quý khách đã đăng ký sử dụng dịch vụ lắp đặt điện và gas GTN.</p>
+    <p>Chúng tôi đã cung cấp thông tin của Quý khách cho Công ty lắp đặt điện và gas theo ngày giờ ấn định dưới đây, để hoàn tất đăng ký cần phải có sự đồng ý của Quý khách.</p>
+    <p>Nếu Quý khách có bất kỳ câu hỏi nào, xin vui lòng liên hệ với chúng tôi theo địa chỉ email này.</p>
+    <br>
+
+    <p>Công ty đăng ký: Hinatao Energy（ヒナタオエナジー）</p>
+    <p>
+      Ngày bắt đầu mở đường điện: 
+      {{#if electricStartDate }}
+        Ngày {{electricStartDateDay}} tháng {{electricStartDateMonth}} năm {{electricStartDateYear}}
+      {{else}}
+        -
+      {{/if}}
+    </p>
+    <p>
+      Ngày đến lắp đặt gas: 
+      {{#if gasStartDate }}
+        Ngày {{gasStartDateDay}} tháng {{gasStartDateMonth}} năm {{gasStartDateYear}}
+      {{else}}
+        -
+      {{/if}}
+    </p>
+    <p>Thời gian đến lắp đặt gas: {{ gasStartTime }}</p>
+    <p>
+      Ngày bắt đầu mở đường nước: 
+      {{#if withWaterSupply }}
+        Giống ngày bắt đầu mở đường điện
+      {{else}}
+        -
+      {{/if}}
+    </p>
+    <br>
+
+    <p>Sẽ có mail yêu cầu đồng ý các điều khoản sử dụng được gửi đến cho Quý khách từ Hinatao Energy. </p>
+    <p>（Tên mail：[HINATAO ENERGY] Please Confirm Terms and Conditions）（Xin hãy xem hình đính kèm）</p>
+    <p>Hãy truy cập vào đường dẫn đình kèm trong mail và bấm vào nút “Đồng ý” để hoàn tất việc đăng ký.</p>
+    <p>Nếu chúng tôi không nhận được sự đồng ý của Quý khách thông qua màn hình xác nhận đồng ý với các điều khoản hợp đồng này thì việc đăng ký sẽ không được hoàn tất và chúng tôi sẽ không thể cung cấp dịch vụ cho Quý khách vào ngày bắt đầu sử dụng mà Quý khách mong muốn.</p>
+    <br>
+
+    <p>Xin hãy chắc chắn hoàn tất xác nhận đồng ý ít nhất 5 ngày trước ngày bắt đầu sử dụng mà Quý khách mong muốn.</p>
+    <br>
+
+    <p>Nếu Quý khách không xác nhận đồng ý thì đơn đăng ký của Quý khách sẽ tự động bị hủy và chúng tôi không thể tiếp nhận đăng ký lần nữa của Quý khách vào ngày bắt đầu sử dụng mà Quý khách mong muốn.</p>
+    <p>Khi đó Quý khách sẽ phải tự mình đăng ký với từng công ty cung cấp điện, gas..., kính mong Quý khách thông cảm.</p>
+  </div>
+</body>

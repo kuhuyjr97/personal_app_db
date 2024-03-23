@@ -1,0 +1,27 @@
+{
+  "name": "api",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "eslint": "eslint \"src/**/*.ts\"",
+    "prettier": "prettier --write \"src/**/*.ts\""
+  },
+  "dependencies": {
+    "valibot": "^0.26.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "tsup": "^8.0.1",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3"
+  }
+}

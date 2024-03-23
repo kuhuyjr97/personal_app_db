@@ -1,0 +1,20 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "testTimeout": 20000,
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@/config/(.*)$": "<rootDir>/../src/config/$1",
+    "@/decorators/(.*)$": "<rootDir>/../src/common/decorators/$1",
+    "@/exception_filters/(.*)$": "<rootDir>/../src/common/exception_filters/$1",
+    "@/guards/(.*)$": "<rootDir>/../src/common/guards/$1",
+    "@/interfaces/(.*)$": "<rootDir>/../src/common/interfaces/$1",
+    "@/modules/(.*)$": "<rootDir>/../src/modules/$1",
+    "@/strategies/(.*)$": "<rootDir>/../src/common/strategies/$1",
+    "@/libs/(.*)$": "<rootDir>/../src/common/libs/$1"
+  }
+}

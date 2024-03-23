@@ -1,0 +1,2 @@
+#!/bin/sh
+docker run -it --env-file=aws/environments/prod/.env -e "HOME=$HOME" -v $PWD:$HOME -w $HOME/aws/environments/prod hashicorp/terraform:1.5.2 $@

@@ -1,0 +1,53 @@
+{{!-- {{>head}} --}}
+<body>
+  <div class="container">
+    <p>{{ applicantName }}様</p>
+    <br>
+
+    <p>この度は、GTN電気ガスセットアップサービスにお申込みいただきありがとうございます。</p>
+    <p>以下の日程でお客様の情報を電気ガスセットアップサービス会社へ提供し、申し込みを完了するためお客様の同意が必要です。</p>
+    <p>ご不明な点等ございましたらこちらのメールアドレスまでご連絡ください。</p>
+    <br>
+
+    <p>申込業者  ヒナタオエナジー</p>
+    <p>
+      電気開始日  
+      {{#if electricStartDate }}
+        {{electricStartDateYear}}年{{electricStartDateMonth}}月{{electricStartDateDay}}日
+      {{else}}
+        -
+      {{/if}}
+    </p>
+    <p>
+      ガス立会日  
+      {{#if gasStartDate }}
+        {{gasStartDateYear}}年{{gasStartDateMonth}}月{{gasStartDateDay}}日
+      {{else}}
+        -
+      {{/if}}
+    </p>
+    <p>ガス立会時間  {{ gasStartTime }}</p>
+    <p>
+      水道開始日 
+      {{#if withWaterSupply }}
+        電気利用開始日と同じ
+      {{else}}
+        -
+      {{/if}}
+    </p>
+    <br>
+
+    <p>ヒナタオエナジーより規約同意をしていただくためのメールが送信されています。</p>
+    <p>（メールタイトル：[HINATAO ENERGY] Please Confirm Terms and Conditions）（添付画像参照）</p>
+    <p>添付されているURLにアクセスし、同意ボタンをクリックしていただくと、申し込みが完了します。</p>
+    <p>この規約同意画面から同意していただかなければ、申込が完了せず利用開始希望日にサービスを提供することができません。</p>
+    <br>
+
+    <p>利用開始希望日の5日前までに必ず同意をしていただくようお願いします。</p>
+    <br>
+
+    <p>同意いただけない場合は自動的にキャンセルになるのでご注意ください。</p>
+    <p>また、キャンセルの場合、当サービスではご利用希望日での再申し込みは承ることができず、</p>
+    <p>お客様ご自身で各供給会社様へ申込を行っていただく必要がりますことをご了承ください。</p>
+  </div>
+</body>

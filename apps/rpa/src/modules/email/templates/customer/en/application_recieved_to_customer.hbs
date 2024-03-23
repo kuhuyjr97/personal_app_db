@@ -1,0 +1,52 @@
+{{>head}}
+<body>
+  <div class="container">
+    <p>Dear {{ applicantName }},</p>
+    <br>
+
+    <p>Thank you for applying for GTN's Electricity and Gas Setup Service.</p>
+    <p>In order to complete your application, we require your consent to share your information with the Electricity and Gas Setup Service company according to the schedule provided below.</p>
+    <p>If you have any questions, feel free to reach out to us at this email address.</p>
+    <br>
+
+    <p>Service Provider: Hinatao Energy Co.（ヒナタオエナジー）</p>
+    <p>
+      Electricity Start Date:  
+      {{#if electricStartDate }}
+        {{electricStartDateYear}}/{{electricStartDateMonth}}/{{electricStartDateDay}}
+      {{else}}
+        -
+      {{/if}}
+    </p>
+    <p>
+      Gas Activation Date:  
+      {{#if gasStartDate }}
+        {{gasStartDateYear}}/{{gasStartDateMonth}}/{{gasStartDateDay}}
+      {{else}}
+        -
+      {{/if}}
+    </p>
+    <p>Gas Activation Time:  {{ gasStartTime }}</p>
+    <p>
+      Water Start Date:  
+      {{#if withWaterSupply }}
+        Same as Electricity Start Date
+      {{else}}
+        -
+      {{/if}}
+    </p>
+    <br>
+
+    <p>Hinatao Energy Co. has sent you an email containing the Terms and Conditions.</p>
+    <p>(Email title: [HINATAO ENERGY] Please Confirm Terms and Conditions) (see attached image)</p>
+    <p>To complete the application process, please click the link in the email and select 'Agree.'</p>
+    <p>If you do not agree to the terms and conditions on this agreement screen, your application will remain incomplete, and we will be unable to provide services on your desired start date. </p>
+    <br>
+
+    <p>Please ensure that you agree to the Terms and Conditions at least 5 days before your intended start date of service.</p>
+    <br>
+
+    <p>If you do not agree, your application will be automatically canceled, and you will not be able to reapply for this service on your desired start date.</p>
+    <p>Please be aware that you will need to apply for these services directly with the respective suppliers.</p>
+  </div>
+</body>

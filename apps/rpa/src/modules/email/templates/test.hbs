@@ -1,0 +1,15 @@
+{{>head}}
+<body>
+  <div class="container">
+    <p>{{ companyName }} {{ adminName }}様</p>
+    {{>header}}
+
+    <p>下記の理由によりシステム利用を一時的に停止させていただいております。</p>
+    <p>ご対応の上、{{ deadline }}までに管理サイトを利用してご報告をお願いいたします。</p>
+    <br>
+
+    <p>{{ reason }}</p>
+
+    {{>footer}}
+  </div>
+</body>
