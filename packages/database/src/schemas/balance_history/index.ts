@@ -1,4 +1,11 @@
-import { boolean, pgTable, serial, text,integer, unique } from "drizzle-orm/pg-core";
+import {
+  boolean,
+  pgTable,
+  serial,
+  text,
+  integer,
+  unique,
+} from "drizzle-orm/pg-core";
 import { base_schema_columns } from "@/schemas/base_schemas";
 
 export const balance_history = pgTable("balance_history", {
@@ -12,4 +19,3 @@ export const balance_history = pgTable("balance_history", {
   note: text("note"),
   ...base_schema_columns,
 });
-
