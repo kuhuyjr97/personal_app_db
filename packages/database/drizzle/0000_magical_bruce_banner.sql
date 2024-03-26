@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS "balance_history" (
 CREATE TABLE IF NOT EXISTS "information" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"type" text,
-	"user" text,
+	"user_name" text,
 	"hash" text,
 	"purpose" text,
 	"note" text,
@@ -34,7 +34,9 @@ CREATE TABLE IF NOT EXISTS "information_history" (
 CREATE TABLE IF NOT EXISTS "daily_job" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"type" text,
+	"where" text,
 	"name" text,
+	"amount" integer,
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp DEFAULT now() NOT NULL
 );

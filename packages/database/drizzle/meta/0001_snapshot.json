@@ -1,8 +1,8 @@
 {
   "version": "5",
   "dialect": "pg",
-  "id": "f30f3eea-3f26-40a2-a107-fefbece30bf2",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "522033cf-143f-4c76-8807-f0e639cbccdc",
+  "prevId": "f30f3eea-3f26-40a2-a107-fefbece30bf2",
   "tables": {
     "balance_history": {
       "name": "balance_history",
@@ -229,6 +229,42 @@
         "amount": {
           "name": "amount",
           "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "daily_note": {
+      "name": "daily_note",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "text",
           "primaryKey": false,
           "notNull": false
         },

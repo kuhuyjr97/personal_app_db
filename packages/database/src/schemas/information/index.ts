@@ -7,7 +7,7 @@ import { relations } from "drizzle-orm";
 export const information = pgTable("information", {
   id: serial("id").primaryKey(),
   type: text("type"),
-  user_name: text("user"),
+  user_name: text("user_name"),
   hash:text('hash'),
   purpose: text("purpose"),
   note: text("note"),
