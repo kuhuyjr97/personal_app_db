@@ -1,8 +1,8 @@
 {
   "version": "5",
   "dialect": "pg",
-  "id": "522033cf-143f-4c76-8807-f0e639cbccdc",
-  "prevId": "f30f3eea-3f26-40a2-a107-fefbece30bf2",
+  "id": "b7ac4a75-c64f-4285-bc81-9efc1cdf2334",
+  "prevId": "172c1a69-3733-4c2e-8922-0eb86271ab3c",
   "tables": {
     "balance_history": {
       "name": "balance_history",
@@ -220,8 +220,20 @@
           "primaryKey": false,
           "notNull": false
         },
+        "platform": {
+          "name": "platform",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
         "name": {
           "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "note": {
+          "name": "note",
           "type": "text",
           "primaryKey": false,
           "notNull": false
@@ -298,9 +310,9 @@
           "primaryKey": true,
           "notNull": true
         },
-        "name": {
-          "name": "name",
-          "type": "integer",
+        "task_name": {
+          "name": "task_name",
+          "type": "text",
           "primaryKey": false,
           "notNull": false
         },
@@ -319,6 +331,12 @@
         "note": {
           "name": "note",
           "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "name": {
+          "name": "name",
+          "type": "integer",
           "primaryKey": false,
           "notNull": false
         },

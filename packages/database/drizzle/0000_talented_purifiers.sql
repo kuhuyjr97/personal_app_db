@@ -41,12 +41,20 @@ CREATE TABLE IF NOT EXISTS "daily_job" (
 	"updated_at" timestamp DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
+CREATE TABLE IF NOT EXISTS "daily_note" (
+	"id" serial PRIMARY KEY NOT NULL,
+	"type" text,
+	"created_at" timestamp DEFAULT now() NOT NULL,
+	"updated_at" timestamp DEFAULT now() NOT NULL
+);
+--> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "task" (
 	"id" serial PRIMARY KEY NOT NULL,
-	"name" integer,
+	"task_name" text,
 	"episode_total" integer,
 	"episode_left" integer,
 	"note" text,
+	"name" integer,
 	"is_done" text,
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp DEFAULT now() NOT NULL

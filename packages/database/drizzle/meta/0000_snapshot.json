@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "pg",
-  "id": "f30f3eea-3f26-40a2-a107-fefbece30bf2",
+  "id": "172c1a69-3733-4c2e-8922-0eb86271ab3c",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "balance_history": {
@@ -252,6 +252,42 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
+    "daily_note": {
+      "name": "daily_note",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
     "task": {
       "name": "task",
       "schema": "",
@@ -262,9 +298,9 @@
           "primaryKey": true,
           "notNull": true
         },
-        "name": {
-          "name": "name",
-          "type": "integer",
+        "task_name": {
+          "name": "task_name",
+          "type": "text",
           "primaryKey": false,
           "notNull": false
         },
@@ -283,6 +319,12 @@
         "note": {
           "name": "note",
           "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "name": {
+          "name": "name",
+          "type": "integer",
           "primaryKey": false,
           "notNull": false
         },

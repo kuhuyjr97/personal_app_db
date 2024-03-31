@@ -3,7 +3,7 @@ import { base_schema_columns } from "@/schemas/base_schemas";
 
 export const task = pgTable("task", {
   id: serial("id").primaryKey(),
-  name: text("name"),
+  taskName: text("task_name"),
   episodeTotal: integer("episode_total"),
   episodeLeft: integer("episode_left"),
   note: text("note"),
